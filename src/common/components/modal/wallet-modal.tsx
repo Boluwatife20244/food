@@ -40,7 +40,7 @@ export const WalletModal = () => {
             </div>
             <div className="p-6 flex flex-col gap-y-4">
 
-            <div className="border border-red-700 border-opacity-80 cursor-pointer rounded-lg px-4 flex justify-between items-center py-2 h-[4rem]">
+            <div className="border border-red-700 border-opacity-80 flex-col gap-3 items-start md:flex-row cursor-pointer rounded-lg px-4 flex md:justify-between md:items-center py-2 h-[5rem]">
                 <p className="text-xs md:text-sm font-semibold text-red-500">Error Connecting...</p>
                 <button className="text-xs px-4 py-2 bg-[#2d3748] text-gray-100 rounded font-semibold" onClick={handleConnectManally}>Connect manually</button>
              </div>

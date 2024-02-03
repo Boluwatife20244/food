@@ -17,7 +17,7 @@ export const WalletList = ()  => {
                        <div className="w-[2.5rem] h-[2.5rem] md:w-[4rem] md:h-[4rem] mb-3">
                        <img src={image} alt={title} className="w-full h-full object-cover rounded-full hover:scale-110 transition-all duration-150" />
                        </div>
-                       <p className="text-xs font-semibold text-gray-100">{title}</p>
+                       <p className="text-[10px] md:text-xs font-semibold text-gray-100">{title}</p>
                     </button>
                 ))
             }
