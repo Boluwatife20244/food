@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import heroImage from "../../../assets/hero-img-home-2.417386c3.png";
 
 export const HeroSection = () => {
@@ -24,9 +25,9 @@ export const HeroSection = () => {
                   with zero Human interference.
                 </p>
                 <div className="flex justify-around">
-                  <a href="app/wallet.php"> <button className="text-white  bg-[#ec9b00] border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg interact-button">
+                  <Link to="/wallet" > <button className="text-white  bg-[#ec9b00] border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-base font-medium interact-button">
                       Connect Wallet
-                    </button> </a>
+                    </button> </Link>
                  
                 </div>
               </div>
