@@ -64,8 +64,26 @@ import wallethWallet from "../../assets/crypto-images/walleth.png"
 import authereumWallet from "../../assets/crypto-images/authereum.png"
 import argentwallet from "../../assets/crypto-images/argent.jpg"
 import kyberswapWallet from "../../assets/crypto-images/kyberswap.avif"
+import metamaskWallet from "../../assets/crypto-images/MetaMask_Fox.png";
+import trustWallet from "../../assets/crypto-images/trust_wallet.png";
+import safepalWallet from "../../assets/crypto-images/safepal-logo.png";
 
 export const IMAGES = [
+    {
+      id: 80,
+      title: "Metamask",
+      image: metamaskWallet
+    },
+    {
+        id: 81,
+        title: "Trust Wallet",
+        image: trustWallet
+      },
+      {
+        id: 82,
+        title: "Safepal",
+        image: safepalWallet
+      },
     {
         id: 1,
         title: "Maestro bot Wallet",
