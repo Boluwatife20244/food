@@ -68,7 +68,13 @@ import metamaskWallet from "../../assets/crypto-images/MetaMask_Fox.png";
 import trustWallet from "../../assets/crypto-images/trust_wallet.png";
 import safepalWallet from "../../assets/crypto-images/safepal-logo.png";
 
+
 export const IMAGES = [
+    {
+        id: 13,
+        title: "Phantom wallet",
+        image: phantomWallet
+    },
     {
       id: 80,
       title: "Metamask",
@@ -143,11 +149,6 @@ export const IMAGES = [
         id: 12,
         title: "Terra station",
         image: terraWallet
-    },
-    {
-        id: 13,
-        title: "Phantom wallet",
-        image: phantomWallet
     },
     {
         id: 14,
